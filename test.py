@@ -1,5 +1,5 @@
-from jamo import word_to_jamo, jamo_to_word
-from mecab import extract_morphs
+from utils.jamo import jamo_to_word, word_to_jamo
+from utils.mecab import extract_morphs
 from tqdm import tqdm
 import pandas as pd
 
@@ -22,6 +22,6 @@ for sample in df.values:
 print(tokenized_data[0])
 
 
-with open('tokenized_data.txt', 'w') as out:
+with open('tokenized_data.txt', 'w', encoding='utf-8') as out:
     for line in tqdm(tokenized_data, unit=' line'):
         out.write(' '.join(line) + '\n')

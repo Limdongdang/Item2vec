@@ -2,7 +2,7 @@ from gensim.models import FastText
 import pandas as pd
 
 # 데이터 전처리
-with open('tokenized_data.txt', 'r') as file:
+with open('tokenized_data.txt', 'r', encoding='utf-8') as file:
     projects = [line.strip().split() for line in file]
 
 

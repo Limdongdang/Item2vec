@@ -3,16 +3,17 @@ from utils.jamo import word_to_jamo
 import pandas as pd
 
 df = pd.read_excel('projects.xlsx')
-
-print('1번 값: ', ' '.join(df.values[184].astype(str)))
-print('2번 값: ', ' '.join(df.values[4].astype(str)))
+firstvalue = ' '.join(df.values[184].astype(str))
+secondvalue = ' '.join(df.values[4].astype(str))
+print('1번 값: ', firstvalue)
+print('2번 값: ', secondvalue)
 # 모델 불러오기
 loaded_model = FastText.load("models/project_model")
 
 # print 
 
 # 유사도 계산
-similarity = loaded_model.wv.similarity(word_to_jamo(' '.join(df.values[1].astype(str))), word_to_jamo(' '.join(df.values[0].astype(str))))
+similarity = loaded_model.wv.similarity(word_to_jamo(firstvalue), word_to_jamo(secondvalue))
 
 print('1번과 2번 비교 값', similarity)
 

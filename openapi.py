@@ -19,8 +19,8 @@ for job in data['jobs']['job']:
     project = []
     project.append(job['position']['title'])  # job title
     project.append(job['position']['location']['name'])  # job location
-    project.append(job['position']['experience-level'])  # job experience
-    project.append(job['position']['required-education-level'])  # job education
+    project.append(job['position']['experience-level']['name'])  # job experience
+    project.append(job['position']['required-education-level']['name'])  # job education
     project.append(job['keyword'])  # job keyword
     projects.append(project)
 

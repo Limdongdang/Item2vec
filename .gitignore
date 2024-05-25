@@ -2,3 +2,8 @@
 .env
 
 __pycache__/
+/fastText
+*.txt
+project_model
+project_model.wv.vectors_ngrams.npy
+projects.xlsx

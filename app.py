@@ -12,7 +12,6 @@ projects = df['Keyword'].str.split(',')
 # FastText 모델 학습
 model = FastText(sentences=projects, min_count=1, sg=1, negative=5, epochs=10, hs=0, vector_size=100, window=9999999, workers=4)
 
-
 def recommend_project(input_keywords):
     # 모든 프로젝트에 대한 유사도 점수를 저장할 딕셔너리
     project_scores = {}
@@ -71,8 +70,8 @@ def get_most_similar_project(tech_stack):
     return most_similar_project
 
 # 예시
-print(calculate_similarity_scores(['소프트웨어']))
+print(calculate_similarity_scores(['건강', '앱', '개발', '기획']))
 # 예시
-print(get_most_similar_project(['소프트웨어', '모바일', '텔레콤', 'Phone', '쇼핑몰']))
+print(get_most_similar_project(['소프트', '모바일', '텔레콤', 'Phone', '쇼핑몰']))
 
-print(recommend_project(['모바일앱', '텔레콤']))
+print(recommend_project(['건강', '앱']))
